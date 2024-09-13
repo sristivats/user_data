@@ -18,8 +18,7 @@ _pycache_/
 media/
 
 # Ignore static files
-staticfiles/
-static/
+
 
 # Ignore local settings
 settings_local.py

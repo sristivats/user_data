@@ -1,0 +1,308 @@
+body {
+    height: 100vh;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    position: sticky;
+    align-content: center;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.mailid {
+    background-color: white;
+    color: black;
+    border-radius: 50px;
+    position: relative;
+}
+
+.mail {
+    background-color: white;
+    margin: 5px;
+    color: black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+    border-color: white;
+    width: 100px;
+}
+
+span {
+    font-size: 20px;
+}
+
+.home {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+
+#imgmail {
+    border-radius: 50%;
+}
+
+.mailid:hover {
+    background-color: #b0aaaa;
+}
+
+.mail:hover {
+    background-color: #b0aaaa;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 20px;
+    top: 55px;
+    border-radius: 10px;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.options.show {
+    display: block;
+}
+
+.options a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.options a:hover {
+    background-color: #938f8f;
+    border-radius: 10px;
+}
+
+.sidebar {
+    background-color: black;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    transition: 0.6s ease;
+    transition-property: left;
+    left: -250px;
+}
+
+.close-btn {
+    position: absolute;
+    color: white;
+    right: 0px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.new {
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.menu {
+    width: 100%;
+    margin-top: 60px;
+    background-color: rgb(53, 52, 52);
+}
+
+.menu .items {
+    position: relative;
+    border-radius: 10px;
+}
+
+.menu .items a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 30px;
+}
+
+.items i {
+    margin-right: 15px;
+}
+
+.items a .dropdown {
+    position: absolute;
+    right: 0;
+    transition: 0.5s ease;
+}
+
+.items .sub-menu {
+    background-color: #403f3f;
+    display: none;
+}
+
+.menu-button {
+    position: absolute;
+    color: black;
+    font-size: 35px;
+    cursor: pointer;
+    margin: 25px;
+}
+
+.sidebar.show {
+    left: 0;
+}
+
+.items .sub-menu.show {
+    display: block;
+}
+
+.sub-items a:hover {
+    background-color: #f9f9f9;
+    color: black;
+}
+
+.menu .items .sub-items:hover {
+    background-color: #f9f9f9;
+    color: black;
+}
+
+main {
+    margin-left: 100px;
+    transition: 0.5s ease;
+    margin-right: 30px;
+}
+
+.margin250 {
+    margin-left: 280px;
+    transition: 0.5s ease;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+}
+
+.username img {
+    border-radius: 50%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #141313;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ebebeb;
+}
+
+tbody tr:hover {
+    background-color: #8c8b8b;
+}
+
+thead {
+    background-color: #212221;
+    color: white;
+}
+
+.action-btn {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #4051cf;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+@media (max-width: 480px) {
+    header {
+        padding: 5px;
+        position: sticky;
+        top: 0px;
+        width: 100%;
+    }
+
+    .menu-button {
+        font-size: 20px;
+        position: sticky;
+        top: 70px;
+        left: 0px;
+        
+    }
+    .sub-items a:hover
+
+    .menu .items a {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .new.items a {
+        font-size: 20px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        
+        padding: 8px;
+    }
+    main {
+        margin-left: 10px;
+        transition: 0.5s ease;
+        margin-right: 10px;
+    }
+    .margin250 {
+        margin-left: 50px;
+        transition: 0.5s ease;
+    }
+    .username{
+        flex-direction: column;
+    }
+    
+}
+.add-profile{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(45, 72, 171);
+    border-radius: 15px;
+    padding: 6px;
+    margin-top: 50px;
+    margin-right: 30px;
+    font-size: x-large;
+}
+
+#add-profile-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
