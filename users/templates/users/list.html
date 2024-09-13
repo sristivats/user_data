@@ -1,0 +1,118 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+    <link rel="stylesheet" href="{% static 'users/alcher.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="home">
+            <a class="home" href="./index.html">
+                <img id="imghome" src="{%static 'users/images/round.png'%}"  alt="home" height="20px">
+                <span>HOME</span>
+            </a> 
+        </div>
+        <div class="mailid">
+            <button class="mail" onclick="toggleMailDropdown()">
+                <img id="imgmail" src="{%static 'users/images/profile.jpeg'%}" alt="" height="25px">
+                <span>Laved</span>
+            </button>   
+        </div>
+        <div id="idDropdown" class="options">
+            <a href="#">Profile</a>
+            <a href="#">Logout</a>
+        </div>
+    </header>
+    <div class="menu-button" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" id="close-btn">
+            <img src="{%static 'users/images/closebtn.png'%}" alt="" height="20px">
+        </div>
+        <div class="menu">
+            <div class="new items">
+                <a href="" style="color: black; font-size: 30px;"><img src="{%static 'users/images/plus.svg'%}" alt="" height="25px"> New Item</a>
+            </div>
+            <div class="items">
+                <a href=""><i class="fas fa-table"></i> Dashboard <i class="fas fa-angle-right dropdown"></i></a>
+                <div class="sub-menu">
+                    <a href="" class="sub-items">Commerce</a>
+                    <a href="" class="sub-items">Analytics </a>
+                    <a href="" class="sub-items">Crypto</a>
+                    <a href="" class="sub-items">Helpdesk</a>
+                    <a href="" class="sub-items">Monitoring</a>
+                    <a href="" class="sub-items">Fitness</a>
+                </div>
+            </div>
+            <div class="items">
+                <a href=""><i class="fas fa-table"></i> Application <i class="fas fa-angle-right dropdown"></i></a>
+                <div class="sub-menu">
+                    <a href="./index.html" class="sub-items">New Form</a>
+                    <a href="./index.html" class="sub-items">Edit form </a>
+                    <a href="google.com" class="sub-items">Application's Status</a>
+                </div>
+            </div>
+            <div class="items">
+                <a href=""><i class="fas fa-table"></i> Elements <i class="fas fa-angle-right dropdown"></i></a>
+                <div class="sub-menu">
+                    <a href="" class="sub-items">Id Enquiry</a>
+                    <a href="" class="sub-items">Update Info </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <h1 id="welcome">Welcome</h1>
+        <div class="username">
+            <img src="{%static 'users/images/profile.jpeg'%}" height="150px" alt="">
+            <h1 style="margin-left: 20px;">Laved</h1> 
+        </div>
+        <div class="form-title">
+            <h2>Form Title:</h2>
+            <p>Information of Applicants</p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th data-label="Name">NAME</th>
+                    <th data-label="Username">Username</th>
+                    <th data-label="Email">Email</th>
+                    <th data-label="Operations">Operations</th>
+                </tr>
+                {% for user in users %}
+                <tr>
+                <td>
+                    <p>{{user.name}}</p>
+                </td>
+                <td>
+                    <p>{{user.username}}</p>
+                </td>
+                <td>
+                    <p>{{user.email}}</p>
+                </td>
+                <td>
+                <a href="{% url 'edituser' user.id%}" class="action-btn edit-btn" >Edit</a>
+                <a href="{% url 'deleteuser' user.id%}" class="action-btn delete-btn" >Delete</a>   
+                </td>
+                </tr>
+                {%endfor%}
+                
+
+                
+            </thead>
+            <tbody id="userdata">
+            </tbody>
+        </table>
+        <div id="add-profile-container">
+  
+            <a href="{%url 'adduser'%}" class="add-profile">Add Profile</a>
+        </div>
+    </main>
+    <script src="{%static 'users/alcher.js'%}"></script>
+</body>
+</html>
