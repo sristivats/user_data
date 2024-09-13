@@ -1,0 +1,44 @@
+# Ignore the virtual environment
+venv/
+env/
+
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+_pycache_/
+
+# Ignore database files
+*.sqlite3
+
+# Ignore Django migrations
+/migrations/.py
+!*/migrations/_init_.py
+
+# Ignore media files (if applicable)
+media/
+
+# Ignore static files
+staticfiles/
+static/
+
+# Ignore local settings
+settings_local.py
+
+# Ignore node modules (if you are using npm for frontend assets)
+node_modules/
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore coverage report files
+.coverage
+htmlcov/
+
+# Ignore any logs
+*.log
